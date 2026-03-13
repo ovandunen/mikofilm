@@ -1,0 +1,300 @@
+/* === mikofilm – Globales Stylesheet === */
+/* Design-System: Cormorant Garamond, #080808 / #f0f0f0 */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap');
+
+/* === TOKENS === */
+:root {
+  --black:  #080808;
+  --white:  #f0f0f0;
+  --gray:   #555555;
+  --font:   'Cormorant Garamond', Georgia, serif;
+  --xs:     0.65rem;
+  --sm:     0.8rem;
+  --base:   0.95rem;
+  --logo:   1.1rem;
+  --space:  0.08em;
+}
+
+/* === RESET === */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+/* === BODY === */
+body {
+  font-family: var(--font);
+  font-weight: 300;
+  background: var(--white);
+  color: var(--black);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* === HEADER === */
+#site-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 2.5rem;
+  background: var(--white);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+/* Aktiver Nav-Link im Header (About/Contact) */
+.main-nav a.nav-active {
+  opacity: 1 !important;
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 1px;
+}
+
+.logo {
+  font-size: var(--logo);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  margin-right: auto;
+}
+
+.main-nav {
+  display: flex;
+  gap: 2rem;
+  font-size: var(--xs);
+  letter-spacing: var(--space);
+}
+
+.main-nav a:hover { opacity: 0.5; transition: opacity 0.2s; }
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: var(--xs);
+  letter-spacing: var(--space);
+  margin-left: 2rem;
+}
+
+.lang { cursor: pointer; opacity: 0.4; transition: opacity 0.2s; }
+.lang.active { opacity: 1; }
+.sep { opacity: 0.3; }
+
+/* === HERO – mobius.png auf allen Seiten === */
+#hero {
+  flex: 1;
+  position: relative;
+  background-image: url('assets/mobius.png');
+  background-color: var(--black);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* === OVERLAY NAVIGATION (Index) === */
+.overlay-nav {
+  position: absolute;
+  color: var(--white);
+  z-index: 5;
+}
+
+.left-top  { top: 2.5rem; left: 2.5rem; }
+.right-bottom { bottom: 2.5rem; right: 2.5rem; }
+
+/* === OVERLAY CONTENT – Text links oben (alle Content-Seiten) === */
+.overlay-content {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  color: #f0f0f0;
+  max-width: 480px;
+  z-index: 5;
+}
+
+.overlay-content h1 {
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  color: #f0f0f0;
+}
+
+.overlay-content h2 {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+  color: #f0f0f0;
+}
+
+.overlay-content p,
+.overlay-content address {
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  font-style: normal;
+  color: rgba(240, 240, 240, 0.75);
+}
+
+.overlay-content a {
+  color: rgba(240, 240, 240, 0.75);
+  transition: color 0.2s;
+}
+
+.overlay-content a:hover {
+  color: #f0f0f0;
+}
+
+.overlay-content .divider {
+  width: 25px;
+  height: 1px;
+  background: #f0f0f0;
+  opacity: 0.2;
+  margin: 2rem 0;
+}
+
+.overlay-content em {
+  color: rgba(240, 240, 240, 0.75);
+  font-style: italic;
+}
+
+/* Back-Link und Raumliste innerhalb overlay-content */
+.overlay-content .back-link {
+  color: rgba(240, 240, 240, 0.5);
+}
+.overlay-content .back-link:hover {
+  color: #f0f0f0;
+}
+.overlay-content .page-title {
+  color: #f0f0f0;
+  margin-top: 0;
+}
+.overlay-content .room-name { color: #f0f0f0; }
+.overlay-content .room-status { color: var(--gray); }
+.overlay-content .loading { color: var(--gray); }
+
+/* Cooperations rechts unten – auf allen Seiten */
+.overlay-bottom-right {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  color: #f0f0f0;
+  z-index: 5;
+}
+
+.overlay-bottom-right a {
+  font-size: 0.78rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: rgba(240, 240, 240, 0.75);
+  transition: color 0.2s;
+}
+
+.overlay-bottom-right a:hover { color: #f0f0f0; }
+
+/* === KATEGORIEN (Index) === */
+.category-list { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.category-link {
+  font-size: var(--sm);
+  font-weight: 300;
+  letter-spacing: var(--space);
+  color: var(--white);
+  transition: opacity 0.25s ease;
+  display: block;
+}
+
+.category-link:hover { opacity: 0.5; }
+
+/* === RAUMLISTE (Unterseiten) === */
+.back-link {
+  font-size: var(--xs);
+  color: var(--white);
+  opacity: 0.5;
+  margin-bottom: 1.5rem;
+  display: block;
+  transition: opacity 0.2s;
+}
+.back-link:hover { opacity: 1; }
+
+.page-title {
+  font-size: var(--sm);
+  font-weight: 300;
+  letter-spacing: var(--space);
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.room-list { display: flex; flex-direction: column; gap: 0.3rem; }
+
+.room-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  transition: opacity 0.2s;
+}
+
+.room-item:hover { opacity: 0.6; cursor: default; }
+
+.room-name {
+  font-size: var(--sm);
+  font-weight: 300;
+  color: var(--white);
+  letter-spacing: var(--space);
+}
+
+.room-status {
+  font-size: var(--xs);
+  color: var(--gray);
+  letter-spacing: var(--space);
+}
+
+/* Besetzt = stark gedimmt */
+.status-occupied .room-name { opacity: 0.35; }
+.status-occupied .room-status { color: var(--gray); }
+.status-free .room-name { opacity: 1; }
+
+.loading { color: var(--gray); font-size: var(--xs); }
+
+/* === FOOTER === */
+#site-footer {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  background: var(--white);
+  flex-shrink: 0;
+}
+
+.social-links { display: flex; align-items: center; gap: 1.25rem; }
+
+.social-icon {
+  color: var(--black);
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+}
+.social-icon:hover { opacity: 1; }
+
+.legal-links { display: flex; gap: 1.5rem; }
+.legal-links a {
+  font-size: var(--xs);
+  letter-spacing: var(--space);
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.legal-links a:hover { opacity: 1; }
+
+/* Aktive Legal-Seite im Footer markieren */
+.legal-links a.active {
+  opacity: 1;
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 1px;
+}
+
