@@ -2,7 +2,7 @@
 
 Minimalistische Multi-Page Website für mikofilm. Virtuelle Räume (Conference Rooms, Office, Projects) werden mit Status (frei/besetzt) aus der Odoo JSON-RPC API geladen.
 
-## Struktur
+ ## Struktur
 
 ```
 mikofilm/
